@@ -1,0 +1,1352 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Mark_Store",
+        "description": "",
+        "version": "1.0"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/employees": {
+            "post": {
+                "tags": ["Employees"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Employee"
+                        }
+                    }
+                ],
+                "responses": {
+                    "405": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "put": {
+                "tags": ["Employees"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Updated Successful",
+                        "schema": {
+                            "$ref": "#/definitions/Employee"
+                        }
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Employees"],
+                "parameters": [],
+                "responses": {
+                    "404": {
+                        "description": "Employees not found"
+                    }
+                }
+            }
+        },
+        "/employees/{id}": {
+            "get": {
+                "tags": ["Employees"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Employee"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Employees ID supplied"
+                    },
+                    "404": {
+                        "description": "Employees not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Employees"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Invalid Employees ID supplied"
+                    },
+                    "404": {
+                        "description": "Employees not found"
+                    }
+                }
+            }
+        },
+        "/employees&store": {
+            "post": {
+                "tags": ["Employees"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Employees&store"
+                        }
+                    }
+                ],
+                "responses": {
+					"405": {
+						"description": "Invalid input"
+					}
+				}
+            },
+            "put": {
+                "tags": ["Employees"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Employees&store"
+                        }
+                    }
+                ],
+                "responses": {
+					"200": {
+						"description": "Updated Successful",
+                        "schema": {
+                            "$ref": "#/definitions/Employees&store"
+                        }
+					}
+				}
+            },
+            "get": {
+                "tags": ["Employees"],
+                "parameters": [],
+                "responses": {
+                    "404": {
+                        "description": "Employees Store not found"
+                    }
+                }
+            }
+        },
+        "/employees&store/{id}": {
+            "get": {
+                "tags": ["Employees"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Employees&store"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Employees Store ID supplied"
+                    },
+                    "404": {
+                        "description": "Employees Store not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Employees"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Invalid Employees Store ID supplied"
+                    },
+                    "404": {
+                        "description": "Employees Store not found"
+                    }
+                }
+            }
+        },
+        "/product&type": {
+            "post": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/ProductType"
+                        }
+                    }
+                ],
+                "responses": {
+					"405": {
+						"description": "Invalid input"
+					}
+				}
+            },
+            "put": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/ProductType"
+                        }
+                    }
+                ],
+                "responses": {
+					"200": {
+						"description": "Updated Successful",
+                        "schema": {
+                            "$ref": "#/definitions/ProductType"
+                        }
+					}
+				}
+            },
+            "get": {
+                "tags": ["Product"],
+                "parameters": [],
+                "responses": {
+                    "404": {
+                        "description": "Product Type not found"
+                    }
+                }
+            }
+        },
+        "/product&type/{id}": {
+            "get": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/ProductType"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Product Type ID supplied"
+                    },
+                    "404": {
+                        "description": "Product Type not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Invalid Product Type ID supplied"
+                    },
+                    "404": {
+                        "description": "Product Type not found"
+                    }
+                }
+            }
+        },
+        "/product&size": {
+            "post": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/ProductSize"
+                        }
+                    }
+                ],
+                "responses": {
+					"405": {
+						"description": "Invalid input"
+					}
+				}
+            },
+            "put": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/ProductSize"
+                        }
+                    }
+                ],
+                "responses": {
+					"200": {
+						"description": "Updated Successful",
+                        "schema": {
+                            "$ref": "#/definitions/ProductSize"
+                        }
+					}
+				}
+            },
+            "get": {
+                "tags": ["Product"],
+                "parameters": [],
+                "responses": {
+                    "404": {
+                        "description": "Product Size not found"
+                    }
+                }
+            }
+        },
+        "/product&size/{id}": {
+            "get": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/ProductSize"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Product Size ID supplied"
+                    },
+                    "404": {
+                        "description": "Product Size not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": ["Product"],
+                "summary": "have a problem",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Invalid Product Size ID supplied"
+                    },
+                    "404": {
+                        "description": "Product Size not found"
+                    }
+                }
+            }
+        },
+        "/product&storck": {
+            "post": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Product&stock"
+                        }
+                    }
+                ],
+                "responses": {
+					"405": {
+						"description": "Invalid input"
+					}
+				}
+            },
+            "put": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Product&stock"
+                        }
+                    }
+                ],
+                "responses": {
+					"200": {
+						"description": "Updated Successful",
+                        "schema": {
+                            "$ref": "#/definitions/Product&stock"
+                        }
+					}
+				}
+            },
+            "get": {
+                "tags": ["Product"],
+                "parameters": [],
+                "responses": {
+                    "404": {
+                        "description": "Product Stock not found"
+                    }
+                }
+            }
+        },
+        "/product&storck/{id}": {
+            "get": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Product&stock"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Product Storck ID supplied"
+                    },
+                    "404": {
+                        "description": "Product Storck not found"
+                    }
+                }
+            },
+            "delete": { 
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Invalid Product Storck ID supplied"
+                    },
+                    "404": {
+                        "description": "Product Storck not found"
+                    }
+                }
+            }
+        },
+        "/product": {
+            "post": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                ],
+                "responses": {
+					"405": {
+						"description": "Invalid input"
+					}
+				}
+            },
+            "put": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    }
+                ],
+                "responses": {
+					"200": {
+						"description": "Updated Successful",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+					}
+				}
+            },
+            "get": {
+                "tags": ["Product"],
+                "parameters": [],
+                "responses": {
+                    "404": {
+                        "description": "Product not found"
+                    }
+                }
+            } 
+        },
+        "/product/{id}": {
+            "get": {
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Product ID supplied"
+                    },
+                    "404": {
+                        "description": "Product not found"
+                    }
+                }
+            },
+            "delete": { 
+                "tags": ["Product"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Invalid Product ID supplied"
+                    },
+                    "404": {
+                        "description": "Product not found"
+                    }
+                }
+            } 
+        },
+        "/role": {
+            "post": {
+                "tags": ["Role"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Role"
+                        }
+                    }
+                ],
+                "responses": {
+					"405": {
+						"description": "Invalid input"
+					}
+				}
+            },
+            "put": {
+                "tags": ["Role"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Role"
+                        }
+                    }
+                ],
+                "responses": {
+					"200": {
+						"description": "Updated Successful",
+                        "schema": {
+                            "$ref": "#/definitions/Role"
+                        }
+					}
+				}
+            },
+            "get": {
+                "tags": ["Role"],
+                "parameters": [],
+                "responses": {
+                    "404": {
+                        "description": "Role not found"
+                    }
+                }
+            } 
+        },
+        "/role/{id}": {
+            "get": {
+                "tags": ["Role"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Role"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Role ID supplied"
+                    },
+                    "404": {
+                        "description": "Role not found"
+                    }
+                }
+            },
+            "delete": { 
+                "tags": ["Role"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Invalid Role ID supplied"
+                    },
+                    "404": {
+                        "description": "Role not found"
+                    }
+                }
+            } 
+        },
+        "/status": {
+            "post": {
+                "tags": ["Status"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    }
+                ],
+                "responses": {
+					"405": {
+						"description": "Invalid input"
+					}
+				}
+            },
+            "put": {
+                "tags": ["Status"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    }
+                ],
+                "responses": {
+					"200": {
+						"description": "Updated Successful",
+                        "schema": {
+                            "$ref": "#/definitions/Status"
+                        }
+					}
+				}
+            },
+            "get": {
+                "tags": ["Status"],
+                "parameters": [],
+                "responses": {
+                    "404": {
+                        "description": "Status not found"
+                    }
+                }
+            } 
+        },
+        "/status/{id}": {
+            "get": {
+                "tags": ["Status"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Status"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Status ID supplied"
+                    },
+                    "404": {
+                        "description": "Status not found"
+                    }
+                }
+            },
+            "delete": { 
+                "tags": ["Status"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Invalid Status ID supplied"
+                    },
+                    "404": {
+                        "description": "Status not found"
+                    }
+                }
+            } 
+        },
+        "/action": {
+            "post": {
+                "tags": ["Action"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Action"
+                        }
+                    }
+                ],
+                "responses": {
+					"405": {
+						"description": "Invalid input"
+					}
+				}
+            },
+            "put": {
+                "tags": ["Action"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Action"
+                        }
+                    }
+                ],
+                "responses": {
+					"200": {
+						"description": "Updated Successful",
+                        "schema": {
+                            "$ref": "#/definitions/Action"
+                        }
+					}
+				}
+            },
+            "get": {
+                "tags": ["Action"],
+                "parameters": [],
+                "responses": {
+                    "404": {
+                        "description": "Action not found"
+                    }
+                }
+            } 
+        },
+        "/action/{id}": {
+            "get": {
+                "tags": ["Action"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Action"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Action ID supplied"
+                    },
+                    "404": {
+                        "description": "Action not found"
+                    }
+                }
+            },
+            "delete": { 
+                "tags": ["Action"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Invalid Action ID supplied"
+                    },
+                    "404": {
+                        "description": "Action not found"
+                    }
+                }
+            } 
+        },
+        "/sale&logs": { 
+            "post": {
+                "tags": ["Sale"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Sale&logs"
+                        }
+                    }
+                ],
+                "responses": {
+					"405": {
+						"description": "Invalid input"
+					}
+				}
+            },
+            "put": {
+                "tags": ["Sale"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Sale&logs"
+                        }
+                    }
+                ],
+                "responses": {
+					"200": {
+						"description": "Updated Successful",
+                        "schema": {
+                            "$ref": "#/definitions/Sale&logs"
+                        }
+					}
+				}
+            },
+            "get": {
+                "tags": ["Sale"],
+                "parameters": [],
+                "responses": {
+                    "404": {
+                        "description": "Sale logs not found"
+                    }
+                }
+            } 
+        },
+        "/sale&logs/{id}": { 
+            "get": {
+                "tags": ["Sale"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Sale&logs"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Sale Logs ID supplied"
+                    },
+                    "404": {
+                        "description": "Sale Logs not found"
+                    }
+                }
+            }
+        },
+        "/sale&order": {
+            "post": {
+                "tags": ["Sale"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Sale&order"
+                        }
+                    }
+                ],
+                "responses": {
+					"405": {
+						"description": "Invalid input"
+					}
+				}
+            },
+            "put": {
+                "tags": ["Sale"],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "type": "string",
+                        "schema": {
+                            "$ref": "#/definitions/Sale&order"
+                        }
+                    }
+                ],
+                "responses": {
+					"200": {
+						"description": "Updated Successful",
+                        "schema": {
+                            "$ref": "#/definitions/Sale&order"
+                        }
+					}
+				}
+            },
+            "get": {
+                "tags": ["Sale"],
+                "parameters": [],
+                "responses": {
+                    "404": {
+                        "description": "Sale order not found"
+                    }
+                }
+            } 
+        },
+        "/sale&order/{id}": {
+            "get": {
+                "tags": ["Sale"],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/Sale&order"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid Sale order ID supplied"
+                    },
+                    "404": {
+                        "description": "Sale order not found"
+                    }
+                }
+            },
+            "delete": { 
+                "tags": ["Sale"],
+                "summary": "have a problem",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Deleted"
+                    },
+                    "400": {
+                        "description": "Invalid Sale order ID supplied"
+                    },
+                    "404": {
+                        "description": "Sale order not found"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Employee": { 
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "idCard": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "createAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "image": {
+                    "type": "string",
+                    "format": "longblob"
+                }
+            }
+        },
+        "Employees&store": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "storeName": {
+                    "type": "string"
+                },
+                "storePhone": {
+                    "type": "string"
+                },
+                "employee": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "ProductType": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                }
+            } 
+        },
+        "ProductSize": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "Product&stock": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "product": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "unit": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "Product": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "price": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "size": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "type": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "image": {
+                    "type": "string",
+                    "format": "longblob"
+                }
+            }
+        },
+        "Role": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "Action":{
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                }
+            } 
+        },
+        "Status": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "Sale&logs": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "employee": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "product": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "action": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "price": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "careteAt": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            }
+        },
+        "Sale&order": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "action": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "status": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "careteAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "dueDate": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "delivery": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "image": {
+                    "type": "string",
+                    "format": "longblob"
+                }
+            }
+        }
+    }
+}
